@@ -56,6 +56,8 @@ void setup() {
   // Attempt to connect to WiFi
   if (connectToWiFi(ssid, pass)) {
     Serial.println("Successfully connected to WiFi.");
+    setupWebServer();
+    server.begin();
   } else {
     Serial.println("Failed to connect to WiFi. Starting Access Point.");
     startAccessPoint();
